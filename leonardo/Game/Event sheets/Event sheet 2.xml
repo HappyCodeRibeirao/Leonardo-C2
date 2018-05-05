@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 2</name>
+    <events>
+        <event-block sid="266354800545290">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="699441981791448" type="Herói">
+                    <param id="0" name="Object">boxCoin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="361360805906982" type="boxCoin" />
+                <action id="0" name="Spawn another object" sid="671757284088387" type="boxCoin">
+                    <param id="0" name="Object">coinSilver</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

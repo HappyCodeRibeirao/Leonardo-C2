@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Points" sid="566439714561855" static="0" type="number">0</variable>
+        <event-block sid="939742368641044">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="615928816959683" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="535035945829771" type="PointsValor">
+                    <param id="0" name="Text">Points</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="504418536062447" title="Movimento">
+            <sub-events>
+                <event-block sid="589293262108292">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="635647456075561" type="System">
+                            <param id="0" name="First value">Herói.Platform.VectorX</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="164473932043722" type="Herói">
+                            <param id="0" name="Animation">&quot;Andando&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="890594283465378">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="298791802405497" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="780616280148015" type="Herói">
+                            <param id="0" name="Animation">&quot;Parado&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="104563805025223" title="Inimigo">
+            <sub-events>
+                <event-group description="" sid="101201384819944" title="Blocker">
+                    <sub-events>
+                        <event-block sid="767119885086592">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="327697099190594" type="blockerMad">
+                                    <param id="0" name="Object">Herói</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="993303866444013" type="blockerMad" />
+                                <action id="0" name="Spawn another object" sid="326747637226565" type="blockerMad">
+                                    <param id="0" name="Object">keyYellow</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action disabled="1" id="-11" name="Add to" sid="186423505408704" type="Herói">
+                                    <param id="0" name="Instance variable">pontos</param>
+                                    <param id="1" name="Value">200</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="963930359435377" type="System">
+                                    <param id="0" name="Variable">Points</param>
+                                    <param id="1" name="Value">200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="902394750141663" title="Mosca">
+                    <sub-events>
+                        <event-block sid="649633830139148">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="408294779031803" type="System">
+                                    <param id="0" name="First value">abs(Mosca.CustomMovement.dx)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">Mosca.horizontalSpeed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-14" name="Toggle boolean" sid="684642922868864" type="Mosca">
+                                    <param id="0" name="Instance variable">goRight</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="462613840923651">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="586140838502711" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="CustomMovement" id="2" name="Set speed" sid="400067346707718" type="Mosca">
+                                    <param id="0" name="Which">2</param>
+                                    <param id="1" name="Speed">self.CustomMovement.dy + (self.goDown = 1 ? self.dy : -self.dy)</param>
+                                </action>
+                                <action behavior="CustomMovement" id="2" name="Set speed" sid="126532029791118" type="Mosca">
+                                    <param id="0" name="Which">1</param>
+                                    <param id="1" name="Speed">self.CustomMovement.dx + (Self.goRight = 1 ? self.dx : -self.dx)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="243908989223233">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="350824058750008" type="System">
+                                    <param id="0" name="First value">abs(Mosca.CustomMovement.dy)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">Mosca.verticalSpeed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-14" name="Toggle boolean" sid="441225004501086" type="Mosca">
+                                    <param id="0" name="Instance variable">goDown</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="733917708179501">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="728969096708278" type="Mosca">
+                                    <param id="0" name="Object">Herói</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="641870022912118" type="Mosca" />
+                                <action id="0" name="Spawn another object" sid="710955225968935" type="Mosca">
+                                    <param id="0" name="Object">coinBronze</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action disabled="1" id="-11" name="Add to" sid="827043864293755" type="Herói">
+                                    <param id="0" name="Instance variable">pontos</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="673904776415853" type="System">
+                                    <param id="0" name="Variable">Points</param>
+                                    <param id="1" name="Value">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="934364447274385" title="Herói">
+            <sub-events>
+                <event-block any="1" sid="829199890080654">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="295825699649658" type="Herói">
+                            <param id="0" name="Object">coinSilver</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="835587914324508" type="Herói">
+                            <param id="0" name="Object">coinSilver2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="666925309763901" type="coinSilver" />
+                        <action disabled="1" id="-11" name="Add to" sid="655327119830495" type="Herói">
+                            <param id="0" name="Instance variable">moeda</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="626136960780288" type="System">
+                            <param id="0" name="Variable">Points</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="838365301182968">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="478338661588183" type="Herói">
+                            <param id="0" name="Object">keyYellow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="953215358162125" type="keyYellow" />
+                        <action id="-11" name="Add to" sid="369519857426935" type="Herói">
+                            <param id="0" name="Instance variable">chave</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action disabled="1" id="-11" name="Add to" sid="413419239099417" type="Herói">
+                            <param id="0" name="Instance variable">pontos</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="310898571523839" type="System">
+                            <param id="0" name="Variable">Points</param>
+                            <param id="1" name="Value">1000</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="324536513783991">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="664729658115079" type="Herói">
+                            <param id="0" name="Object">lock_yellow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="798640454925113" type="lock_yellow" />
+                        <action id="-12" name="Subtract from" sid="827488025607653" type="Herói">
+                            <param id="0" name="Instance variable">chave</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="699063383885059">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="535769706787849" type="Herói">
+                            <param id="0" name="Object">spikes</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="524152270157748" type="Herói" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="819225677386427">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="585049975802505" type="Herói">
+                            <param id="0" name="Object">coinBronze2</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="216128177796667" type="Herói">
+                            <param id="0" name="Object">coinBronze</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="101043556509344" type="coinBronze2" />
+                        <action disabled="1" id="-11" name="Add to" sid="554414762065744" type="Herói">
+                            <param id="0" name="Instance variable">moeda</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="112913541940495" type="System">
+                            <param id="0" name="Variable">Points</param>
+                            <param id="1" name="Value">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="983242766910576">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="939553608093188" type="Herói">
+                            <param id="0" name="Object">coinGold2</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="278738941915194" type="Herói">
+                            <param id="0" name="Object">coinGold</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="239843850092800" type="coinGold2" />
+                        <action disabled="1" id="-11" name="Add to" sid="156459980310103" type="Herói">
+                            <param id="0" name="Instance variable">moeda</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="487816984422530" type="System">
+                            <param id="0" name="Variable">Points</param>
+                            <param id="1" name="Value">200</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="967042514759610">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="190070211009694" type="Herói">
+                            <param id="0" name="Object">boxCoin</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="844564023799585" type="boxCoin" />
+                        <action id="0" name="Spawn another object" sid="420229280486880" type="boxCoin">
+                            <param id="0" name="Object">coinSilver</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="540390537657519" type="boxCoin">
+                            <param id="0" name="Object">boxEmpty</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="742673793051093">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="970664245651952" type="Herói">
+                            <param id="0" name="Object">flagBlue</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="749858079543212" type="System">
+                            <param id="0" name="Layout">Layout 2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="704744348388385" type="Herói" />
+                        <action id="-9" name="Destroy" sid="604912698748488" type="flagBlue" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
