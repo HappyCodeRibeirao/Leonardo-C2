@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>fiefflu3ibe4</unique-id>
-    <saved-with-version>24400</saved-with-version>
+    <saved-with-version>25000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -17,6 +17,7 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -80,21 +81,13 @@
                 <behavior-type name="ScrollTo" sid="674162768683023">
                     <behavior id="scrollto" />
                 </behavior-type>
+                <behavior-type name="DestroyOutsideLayout" sid="811691811459678">
+                    <behavior id="destroy" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="1" name="Parado" pingpong="0" repeatcount="1" repeatto="0" sid="308222439875281" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Player\p1_front.png">
-                        <collision-poly>
-                            <point x="0.151515" y="0.108696" />
-                            <point x="0.5" y="0" />
-                            <point x="0.848485" y="0.108696" />
-                            <point x="1" y="0.597826" />
-                            <point x="0.954545" y="1" />
-                            <point x="0.469697" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0.5" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Player\p1_stand.png" />
                 </animation>
                 <animation framecount="11" loop="1" name="Andando" pingpong="0" repeatcount="1" repeatto="0" sid="282665474189531" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.505155" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Player\p1_walk\PNG\p1_walk01.png">
@@ -229,6 +222,9 @@
                             <point x="0" y="0.5" />
                         </collision-poly>
                     </frame>
+                </animation>
+                <animation framecount="1" loop="1" name="Pulando" pingpong="0" repeatcount="1" repeatto="0" sid="657422080810722" speed="5">
+                    <frame duration="1" hotspotX="0.507463" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Player\p1_jump.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -655,44 +651,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="coinBronze2" sid="433115873101272">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="318687055868333" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Items\coinBronze.png">
-                        <collision-poly>
-                            <point x="0.328571" y="0.328571" />
-                            <point x="0.5" y="0.271429" />
-                            <point x="0.671429" y="0.328571" />
-                            <point x="0.742857" y="0.5" />
-                            <point x="0.685714" y="0.685714" />
-                            <point x="0.5" y="0.757143" />
-                            <point x="0.314286" y="0.685714" />
-                            <point x="0.257143" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="coinGold2" sid="135045548645661">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="416230856817365" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Items\coinGold.png">
-                        <collision-poly>
-                            <point x="0.328571" y="0.328571" />
-                            <point x="0.5" y="0.271429" />
-                            <point x="0.671429" y="0.328571" />
-                            <point x="0.742857" y="0.5" />
-                            <point x="0.685714" y="0.685714" />
-                            <point x="0.5" y="0.757143" />
-                            <point x="0.314286" y="0.685714" />
-                            <point x="0.257143" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="dirtHillLeft" sid="681973766527190">
             <plugin id="Sprite" />
             <behaviors>
@@ -721,25 +679,6 @@
                             <point x="1" y="1" />
                             <point x="0" y="1" />
                             <point x="0.5" y="0.5" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="coinSilver2" sid="226403371973599">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="442330520764565" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Happy Code\Desktop\DLC\Assets Construct2\Items\coinSilver.png">
-                        <collision-poly>
-                            <point x="0.328571" y="0.328571" />
-                            <point x="0.5" y="0.271429" />
-                            <point x="0.671429" y="0.328571" />
-                            <point x="0.742857" y="0.5" />
-                            <point x="0.685714" y="0.685714" />
-                            <point x="0.5" y="0.757143" />
-                            <point x="0.314286" y="0.685714" />
-                            <point x="0.257143" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -783,7 +722,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Pontos" sid="914962037788295">
+        <object-type global="1" name="Pontos" sid="914962037788295">
             <plugin id="Text" />
             <behaviors>
                 <behavior-type name="Pin" sid="105995050528234">
@@ -791,7 +730,7 @@
                 </behavior-type>
             </behaviors>
         </object-type>
-        <object-type name="PointsValor" sid="685111083587686">
+        <object-type global="1" name="PointsValor" sid="685111083587686">
             <plugin id="Text" />
             <behaviors>
                 <behavior-type name="Pin" sid="568915209683451">
@@ -809,6 +748,26 @@
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="766535722410881" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="Keys" sid="672825343518157">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="KeysQuantidade" sid="190622223516592">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Keys2" sid="639813627058301">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Coins" sid="610090180294192">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="Sprite" sid="648370139928254">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="455873725878979" speed="5">
+                    <frame duration="1" hotspotX="0.483333" hotspotY="0.661765" original-source="C:\Users\Happy Code\Desktop\imageedit_1_6661241687.jpg" />
                 </animation>
             </animation-folder>
         </object-type>

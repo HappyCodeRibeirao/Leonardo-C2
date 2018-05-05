@@ -152,9 +152,6 @@
                         <condition id="0" name="On collision with another object" sid="295825699649658" type="Herói">
                             <param id="0" name="Object">coinSilver</param>
                         </condition>
-                        <condition id="0" name="On collision with another object" sid="835587914324508" type="Herói">
-                            <param id="0" name="Object">coinSilver2</param>
-                        </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="666925309763901" type="coinSilver" />
@@ -216,15 +213,12 @@
                 </event-block>
                 <event-block any="1" sid="819225677386427">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="585049975802505" type="Herói">
-                            <param id="0" name="Object">coinBronze2</param>
-                        </condition>
                         <condition id="0" name="On collision with another object" sid="216128177796667" type="Herói">
                             <param id="0" name="Object">coinBronze</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="101043556509344" type="coinBronze2" />
+                        <action id="-9" name="Destroy" sid="101043556509344" type="coinBronze" />
                         <action disabled="1" id="-11" name="Add to" sid="554414762065744" type="Herói">
                             <param id="0" name="Instance variable">moeda</param>
                             <param id="1" name="Value">1</param>
@@ -237,15 +231,12 @@
                 </event-block>
                 <event-block any="1" sid="983242766910576">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="939553608093188" type="Herói">
-                            <param id="0" name="Object">coinGold2</param>
-                        </condition>
                         <condition id="0" name="On collision with another object" sid="278738941915194" type="Herói">
                             <param id="0" name="Object">coinGold</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="239843850092800" type="coinGold2" />
+                        <action id="-9" name="Destroy" sid="239843850092800" type="coinGold" />
                         <action disabled="1" id="-11" name="Add to" sid="156459980310103" type="Herói">
                             <param id="0" name="Instance variable">moeda</param>
                             <param id="1" name="Value">3</param>
@@ -286,8 +277,40 @@
                         <action id="-2" name="Go to layout" sid="749858079543212" type="System">
                             <param id="0" name="Layout">Layout 2</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="704744348388385" type="Herói" />
                         <action id="-9" name="Destroy" sid="604912698748488" type="flagBlue" />
+                        <action id="-3" name="Set position" sid="284069679545722" type="Herói">
+                            <param id="0" name="X">32</param>
+                            <param id="1" name="Y">847</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="855254931403923">
+                    <conditions>
+                        <condition id="-19" name="On destroyed" sid="446784686011469" type="Herói" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="329078551851116" type="Sprite">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="773633567511766" type="Sprite" />
+                        <action id="-16" name="Wait" sid="585551535831764" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="596770756508879" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="563827892121941" type="Sprite">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="402471915977299" type="solo">
+                            <param id="0" name="Object">Herói</param>
+                            <param id="1" name="Layer">&quot;personagem&quot;</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="542822535755660" type="Herói">
+                            <param id="0" name="X">32</param>
+                            <param id="1" name="Y">847</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
