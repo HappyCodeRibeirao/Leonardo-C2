@@ -17,6 +17,7 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
     </used-behaviors>
@@ -129,6 +130,30 @@
         </object-type>
         <object-type name="Keyboard" sid="867319930787039">
             <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Explosao" sid="943454861341393">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Timer" sid="208365871307806">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="905085208101432" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Rael\Desktop\image.png">
+                        <collision-poly>
+                            <point x="0.296154" y="0.296154" />
+                            <point x="0.5" y="0.269231" />
+                            <point x="0.657692" y="0.342308" />
+                            <point x="0.738462" y="0.5" />
+                            <point x="0.642308" y="0.642308" />
+                            <point x="0.5" y="0.730769" />
+                            <point x="0.276923" y="0.723077" />
+                            <point x="0.25" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

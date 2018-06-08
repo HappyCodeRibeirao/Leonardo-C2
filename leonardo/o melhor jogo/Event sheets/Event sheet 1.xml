@@ -58,12 +58,21 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="384646031591833" type="Assaltante" />
+                <action id="-15" name="Set visible" sid="481523180809774" type="Explosao">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="254865388086252" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-15" name="Set visible" sid="359901387263663" type="Explosao">
+                    <param id="0" name="Visibility">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="752781940032919">
             <conditions>
                 <condition id="2" name="Key is down" sid="885787029076094" type="Keyboard">
-                    <param id="0" name="Key">87</param>
+                    <param id="0" name="Key">87 (W)</param>
                 </condition>
             </conditions>
             <actions>
@@ -75,7 +84,7 @@
         <event-block sid="876175811275326">
             <conditions>
                 <condition id="2" name="Key is down" sid="310185159357096" type="Keyboard">
-                    <param id="0" name="Key">65</param>
+                    <param id="0" name="Key">65 (A)</param>
                 </condition>
             </conditions>
             <actions>
@@ -87,7 +96,7 @@
         <event-block sid="865404278342835">
             <conditions>
                 <condition id="2" name="Key is down" sid="484872224456032" type="Keyboard">
-                    <param id="0" name="Key">83</param>
+                    <param id="0" name="Key">83 (S)</param>
                 </condition>
             </conditions>
             <actions>
@@ -99,7 +108,7 @@
         <event-block sid="610999191162751">
             <conditions>
                 <condition id="2" name="Key is down" sid="230415171958232" type="Keyboard">
-                    <param id="0" name="Key">68</param>
+                    <param id="0" name="Key">68 (D)</param>
                 </condition>
             </conditions>
             <actions>
